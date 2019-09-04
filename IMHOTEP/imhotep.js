@@ -3,32 +3,32 @@ class Imhotep {
         this.dom = {
             container: $(displayDom)
         }
-        
+
         this.dom.container.append( boardElements );
         var boardElements = this.render();
 
     }
 
     // render the game boards here
-    render(){
-        this.dom.container = $("<div>", {
-            class: 'gameArea',
-            id: 'gameArea'
-        })
-        
-        var gameAreaDiv = $("body");
+    // render(){
+    //     this.dom.container = $("<div>", {
+    //         class: 'gameArea',
+    //         id: 'gameArea'
+    //     })
 
-        this.dom.container.appendTo(gameAreaDiv);
+    //     var gameAreaDiv = $("body");
 
-        var shedAreaDiv = $("<div>")
-                    .addClass("container shed");
-                    shedAreaDiv.appendTo('#gameArea');
-        // for (var i = 0; i < 3; i++) {
-        //     shedAreaDiv.appendTo('#gameArea');
-            
+    //     this.dom.container.appendTo(gameAreaDiv);
 
-        // }
-        
-        console.log('test');
-    }
+    //     var shedAreaDiv = $("<div>")
+    //                 .addClass("container shed");
+    //                 shedAreaDiv.appendTo('#gameArea');
+    //     // for (var i = 0; i < 3; i++) {
+    //     //     shedAreaDiv.appendTo('#gameArea');
+
+
+    //     // }
+
+    //     console.log('test');
+    // }
 }
