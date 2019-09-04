@@ -1,11 +1,11 @@
 class Imhotep {
     constructor (displayDom) {
         this.dom = {
-            container = $(displayDom);
+            container: $(displayDom)
         }
         
         this.dom.container.append( boardElements );
-        // var boardElements = this.render();
+        var boardElements = this.render();
 
     }
 
@@ -14,5 +14,8 @@ class Imhotep {
         this.dom.container = $("<div>", {
             class: 'gameArea',
         })
+        
+        var gameAreaDiv = $("body");
+        this.dom.container.appendTo(gameAreaDiv);
     }
 }

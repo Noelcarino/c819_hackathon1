@@ -2,12 +2,13 @@ class Boat {
   constructor( img, inventorySize){
     this.image = img;
     this.points = {
-      invetorySize = initialInventorySize
+      invetorySize : initialInventorySize
 
-  }
-  this.domElements = {
-    container: null,
-    inventorySize: null
+    }
+    this.domElements = {
+      container: null,
+      inventorySize: null
+    }
   }
 
   // render(){
@@ -27,4 +28,4 @@ class Boat {
   //   })
   //   inventorySizeContainer.append(this.domElements.boats)
   // }
-}
+  }
