@@ -30,11 +30,8 @@ class Players {
     sendBoat(){
       this.shipSailed = true;
     }
-    makeShed();
-    $('<div>',
-    css {
-      class: 'shed',
-      backgroundImage
-
+    makeShed(){
+    var playerDiv = $('<div>').css({'background-color': 'black', 'height': '50px', 'width': '50px'});
+    $(playerDiv).appendTo('#shed');
     }
 }
