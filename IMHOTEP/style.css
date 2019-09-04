@@ -43,11 +43,21 @@ body {
 
 .pyramid {
     display: flex;
-    height: 50px;
-    width: 50px;
-
-
+    flex-wrap: wrap;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-content: flex-start;
+    background-color: rgb(154, 175, 31);
+    height: 22%;
+    left: 3%;
+    bottom: 395px;
+    width: 40%;
+    padding: 4px;
 }
 .pyramid-blocks{
+    background-color: rgb(212, 27, 126);
+    height: 28%;
+    width: 7%;
 
 }

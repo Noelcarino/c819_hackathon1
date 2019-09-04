@@ -6,16 +6,17 @@ class Imhotep {
         
 
         
-
     }
     startGame(){
         //render board;
+
+
         this.dom.container.append( boardElements );
         var boardElements = this.render();
         
     }
 
-    // render the game boards here
+    // render the game boards her
     render(){
         this.dom.container = $("<div>", {
             class: 'gameArea',
@@ -31,3 +32,5 @@ class Imhotep {
         console.log('asdff');
     }
 }
+
+

@@ -12,7 +12,6 @@ class Pyramid {
     this.domElements.pyramidContainer = $("<div>", {
       class: 'pyramid',
       css: {
-        'background-color': 'rgb(154, 175, 31)',
         text: "Pyramid",
       }
     });
@@ -20,9 +19,6 @@ class Pyramid {
     boardContainer.append(this.domElements.pyramidContainer);
     this.domElements.pyramidBlocks = $("<div>", {
       class: 'pyramid-blocks',
-      css: {
-        'background-color': 'rgb(212, 27, 126)'
-      }
     })
     this.domElements.pyramidContainer.append(this.domElements.pyramidBlocks);
   }
