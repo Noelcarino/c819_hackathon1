@@ -13,9 +13,22 @@ class Imhotep {
     render(){
         this.dom.container = $("<div>", {
             class: 'gameArea',
+            id: 'gameArea'
         })
         
         var gameAreaDiv = $("body");
+
         this.dom.container.appendTo(gameAreaDiv);
+
+        var shedAreaDiv = $("<div>")
+                    .addClass("container shed");
+                    shedAreaDiv.appendTo('#gameArea');
+        // for (var i = 0; i < 3; i++) {
+        //     shedAreaDiv.appendTo('#gameArea');
+            
+
+        // }
+        
+        console.log('test');
     }
 }
