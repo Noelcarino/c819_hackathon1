@@ -7,7 +7,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    
+
     height: 80vh;
     width: 90vw;
     background-color: lavender;
@@ -16,14 +16,23 @@ body {
 }
 
 .container {
-    
+
 
     margin: auto;
     padding: auto;
     height: 30%;
     width: 100%;
     overflow: hidden;
-
-
     background-color: brown;
+}
+
+.pyramid {
+    display: flex;
+    height: 50%;
+    width: 50%;
+
+
+}
+.pyramid-blocks{
+
 }
