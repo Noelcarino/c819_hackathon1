@@ -16,14 +16,14 @@ body {
 }
 
 .container {
-    
-
     margin: auto;
     padding: auto;
     height: 30%;
     width: 100%;
     overflow: hidden;
-
-
     background-color: brown;
+}
+
+.board {
+    background-color:
 }
