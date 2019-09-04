@@ -1,7 +1,7 @@
 class Imhotep {
     constructor (displayDom) {
         this.dom = {
-            container = $(displayDom)
+            container = $(displayDom);
         }
         
         this.dom.container.append( boardElements );
