@@ -10,25 +10,20 @@ class Imhotep {
     }
 
     // render the game boards here
-    // render(){
-    //     this.dom.container = $("<div>", {
-    //         class: 'gameArea',
-    //         id: 'gameArea'
-    //     })
-
-    //     var gameAreaDiv = $("body");
-
-    //     this.dom.container.appendTo(gameAreaDiv);
-
-    //     var shedAreaDiv = $("<div>")
-    //                 .addClass("container shed");
-    //                 shedAreaDiv.appendTo('#gameArea');
-    //     // for (var i = 0; i < 3; i++) {
-    //     //     shedAreaDiv.appendTo('#gameArea');
+    render(){
+        this.dom.container = $("<div>", {
+            class: 'gameArea',
+            id: 'gameArea'
+        })
 
 
-    //     // }
+        var gameAreaDiv = $("body");
 
-    //     console.log('test');
-    // }
+        this.dom.container.appendTo(gameAreaDiv);
+
+        var shedAreaDiv = $("<div>")
+                    .addClass("container shed");
+                    shedAreaDiv.appendTo('#gameArea');
+
+    }
 }
