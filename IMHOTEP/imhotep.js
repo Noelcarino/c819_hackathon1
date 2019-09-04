@@ -3,7 +3,7 @@ class Imhotep {
         this.dom = {
             container: $(displayDom)
         }
-        
+
         this.dom.container.append( boardElements );
         var boardElements = this.render();
 
@@ -15,7 +15,8 @@ class Imhotep {
             class: 'gameArea',
             id: 'gameArea'
         })
-        
+
+
         var gameAreaDiv = $("body");
 
         this.dom.container.appendTo(gameAreaDiv);
@@ -25,10 +26,9 @@ class Imhotep {
                     shedAreaDiv.appendTo('#gameArea');
         // for (var i = 0; i < 3; i++) {
         //     shedAreaDiv.appendTo('#gameArea');
-            
+
 
         // }
-        
-        console.log('test');
+
     }
 }
