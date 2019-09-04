@@ -4,9 +4,15 @@ class Imhotep {
             container: $(displayDom)
         }
         
+
+        
+
+    }
+    startGame(){
+        //render board;
         this.dom.container.append( boardElements );
         var boardElements = this.render();
-
+        
     }
 
     // render the game boards here
@@ -17,18 +23,11 @@ class Imhotep {
         })
         
         var gameAreaDiv = $("body");
-
         this.dom.container.appendTo(gameAreaDiv);
 
-        var shedAreaDiv = $("<div>")
-                    .addClass("container shed");
-                    shedAreaDiv.appendTo('#gameArea');
-        // for (var i = 0; i < 3; i++) {
-        //     shedAreaDiv.appendTo('#gameArea');
-            
-
-        // }
-        
-        console.log('test');
+        var pyramidAreaDiv = $("<div>").addClass("container pyramid-container").appendTo("#gameArea");
+        var shipAreaDiv = $("<div>").addClass("container ship-container").appendTo("#gameArea");
+        var shedAreaDiv = $("<div>").addClass("container shed-container").appendTo('#gameArea');
+        console.log('asdff');
     }
 }

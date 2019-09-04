@@ -4,5 +4,10 @@ $(document).ready( startApp );
 
 function startApp(){
     game = new Imhotep('body');
-    console.log("test");
+    $("#button").click(function(){
+        game.startGame();
+
+    })
+    
 }
+
