@@ -34,3 +34,21 @@ class Imhotep {
 }
 
 
+    // render the game boards here
+    render(){
+        this.dom.container = $("<div>", {
+            class: 'gameArea',
+            id: 'gameArea'
+        })
+
+
+        var gameAreaDiv = $("body");
+
+        this.dom.container.appendTo(gameAreaDiv);
+
+        var shedAreaDiv = $("<div>")
+                    .addClass("container shed");
+                    shedAreaDiv.appendTo('#gameArea');
+
+    }
+}

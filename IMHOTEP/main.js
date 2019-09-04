@@ -1,5 +1,5 @@
 var game;
-
+var boat;
 $(document).ready( startApp );
 
 function startApp(){
@@ -9,5 +9,7 @@ function startApp(){
 
     })
     
+    boat = new Boat();
+    boat.render();
 }
 
