@@ -38,3 +38,11 @@ body {
 .pyramid-blocks{
 
 }
+
+.sheds{
+    height: 10%;
+    width: 10%;
+    bottom: 11%;
+    position: absolute;
+    border: 2px solid black;
+}
