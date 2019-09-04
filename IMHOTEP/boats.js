@@ -1,3 +1,5 @@
+
+
 // class Boat {
 //   constructor( img, inventorySize){
 //     this.image = img;
@@ -27,3 +29,4 @@
 //     inventorySizeContainer.append(this.domElements.boats)
 //   }
 // }
+
