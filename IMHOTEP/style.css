@@ -16,8 +16,11 @@ body {
 }
 
 .container {
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> f1c43705394f22c3098f5a396fed6ad5fcbc894d
     margin: auto;
     padding: auto;
     height: 30%;
@@ -26,6 +29,11 @@ body {
     background-color: brown;
 }
 
+<<<<<<< HEAD
+.board {
+    background-color:
+}
+=======
 .pyramid {
     display: flex;
     height: 50px;
@@ -36,3 +44,4 @@ body {
 .pyramid-blocks{
 
 }
+>>>>>>> f1c43705394f22c3098f5a396fed6ad5fcbc894d
