@@ -1,6 +1,6 @@
 class Players {
-    constructor (numberOfPlayers) {
-      this.player = [];
+    constructor () {
+      this.playerArray = [];
       // this.startingNumberOfBlocks = numberOfBlocks;
       this.currentBricks = null;
       // this.colorOfBlocks = colorOfBlocks;
@@ -18,10 +18,10 @@ class Players {
       var availablePlayers = ['player1', 'player2', 'player3',];
       // 'player4', 'player5', 'player6'  (for it we decide to go further)
       if(numberOfPlayers === 2){
-        this.player.push(availablePlayers[0], availablePlayers[1]);
+        this.playerArray.push(availablePlayers[0], availablePlayers[1]);
       }
       if(numberOfPlayers === 3){
-        this.player.push(availablePlayers[0], availablePlayers[1],availablePlayers[2]);
+        this.playerArray.push(availablePlayers[0], availablePlayers[1],availablePlayers[2]);
       }
     }
     addBrickToBoat(){
@@ -30,8 +30,31 @@ class Players {
     sendBoat(){
       this.shipSailed = true;
     }
-    makeShed(){
-    var playerDiv = $('<div>').css({'background-color': 'black', 'height': '50px', 'width': '50px'});
-    $(playerDiv).appendTo('#shed');
+    makeSheds(){
+    if(this.playerArray.length ===2){
+      var player1Div = $('<div>').addClass("sheds").css({
+        'background-color': 'white',
+        'left': '15%',
+      })
+      var player2Div = $('<div>').addClass("sheds").css({
+        'background-color': 'da brown',
+        'left': '30%',
+      })
+      $(player1Div).appendTo('#shed');
+      $(player2Div).appendTo('#shed');
+    }
+
+  if(this.playerArray.length > 2) {
+    var player3Div = $('<div>').addClass("sheds").css({
+      'background-color': 'black',
+      'right': '30%',
+    })
+      }
+  if (this.playerArray.length > 2) {
+    var player4Div = $('<div>').addClass("sheds").css({
+      'background-color': 'gray',
+      'right': '15%',
+    })
+  }
     }
 }

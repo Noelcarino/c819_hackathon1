@@ -24,11 +24,6 @@ class Imhotep {
         var shedAreaDiv = $("<div>")
                     .addClass("container shed");
                     shedAreaDiv.appendTo('#gameArea');
-        // for (var i = 0; i < 3; i++) {
-        //     shedAreaDiv.appendTo('#gameArea');
-
-
-        // }
 
     }
 }
