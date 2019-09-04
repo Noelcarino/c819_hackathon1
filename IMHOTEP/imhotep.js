@@ -3,7 +3,7 @@ class Imhotep {
         this.dom = {
             container = $(displayDom);
         }
-        
+
         this.dom.container.append( boardElements );
         // var boardElements = this.render();
 

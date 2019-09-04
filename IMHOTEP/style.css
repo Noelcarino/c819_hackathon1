@@ -26,9 +26,12 @@ body {
     background-color: brown;
 }
 
+<<<<<<< HEAD
 .board {
     background-color:
 }
+=======
+>>>>>>> f38549892a6ea223c95e95968ef1cd19a044bd23
 .pyramid {
     display: flex;
     height: 50px;
