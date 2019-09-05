@@ -1,5 +1,7 @@
 
 body {
+    
+
     text-align: center;
     margin: 10px;
     padding: 10px;
@@ -14,6 +16,7 @@ body {
     background-color: lavender;
     margin: auto;
     position: relative;
+
 }
 
 .container {
@@ -32,10 +35,16 @@ body {
     background-color: lightgreen;
 }
 .ship-container {
-    background-color: lightskyblue;
+    /* background-color: lightskyblue; */
+    background-image: url('images/ocean.jpeg');
+    background-size: contain;
+    background-position: center;
+
 }
 .shed-container {
-    background-color: darkcyan;
+    /* background-color: darkcyan; */
+    background-image: url('images/desert.jpg');
+    background-size: contain;
 }
 
 

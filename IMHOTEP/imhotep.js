@@ -9,8 +9,6 @@ class Imhotep {
     }
     startGame(){
         //render board;
-
-
         this.dom.container.append( boardElements );
         var boardElements = this.render();
 
@@ -28,7 +26,7 @@ class Imhotep {
 
         var pyramidAreaDiv = $("<div>").addClass("container pyramid-container").appendTo("#gameArea");
         var shipAreaDiv = $("<div>").addClass("container ship-container").appendTo("#gameArea");
-        var shedAreaDiv = $("<div>").addClass("container shed-container").appendTo('#gameArea');
+        var shedAreaDiv = $("<div>").attr("id", "shed").addClass("container shed-container").appendTo('#gameArea');
         console.log('asdff');
     }
 }
