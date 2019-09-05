@@ -1,7 +1,9 @@
 class Boat {
-  constructor(playerMoveCount) {
+  constructor(playerMoveCount, player1array, player2array) {
     this.playerMoveCount = playerMoveCount;
     this.shipSailed = false;
+    this.player1array = player1array;
+    this.player2array = player2array;
     this.blockArray = [];
     this.addBrickToBoat = this.addBrickToBoat.bind(this);
     // this.boatBrickArray: null
@@ -13,41 +15,39 @@ class Boat {
       boatBrickArray: null
     }
   }
-  addBrickToBoat(){
-    if (this.playerMoveCount == 1){
-      var divToBoat = $("<div>", {
-        class: "pyramid-blocks",
-        css: {
-          'background-color' : 'white'
-        }
-      });
-      divToBoat.appendTo("#boat");
-      this.blockArray.push("white");
+  addBrickToBoat() {
+    if (this.blockArray.length < 2) {
+      if (this.playerMoveCount() === 1) {
+        var divToBoat = $("<div>", {
+          class: "pyramid-blocks",
+          css: {
+            'background-color': 'white'
+          }
+        });
+        divToBoat.appendTo("#boat");
+        this.blockArray.push("white");
 
-    } else {
-      var divToBoat = $("<div>", {
-        class: "pyramid-blocks",
-        css: {
-          'background-color' : 'black'
-        }
-  
-      });
+      } else {
+        var divToBoat = $("<div>", {
+          class: "pyramid-blocks",
+          css: {
+            'background-color': 'black'
+          }
 
-      divToBoat.appendTo("#boat");
-      this.blockArray.push("black");
-    }
-    if (this.playerMoveCount == 1){
-      this.playerMoveCount = 2;
+        });
+
+        divToBoat.appendTo("#boat");
+        this.blockArray.push("black");
+      }
     }
     else {
-      this.playerMoveCount = 1;
+      alert("Cannot add to full ship");
     }
 
-    
   }
-  boatClickHandler(){
-      $("#boat").click(this.addBrickToBoat);
-      console.log("dafgsdfbvsdfv");
+  boatClickHandler() {
+    $("#boat").click(this.addBrickToBoat);
+    console.log("dafgsdfbvsdfv");
   }
 
   getBoatBrickArray() {

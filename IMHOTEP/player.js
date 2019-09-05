@@ -6,7 +6,10 @@ class PlayerData {
       this.playerMoveCount = 1;
       this.numberOfRounds = null;
       this.addBrickToShed = this.addBrickToShed.bind(this);
-      this.currentBricks = 1;
+      this.currentBricks1 = null;
+      this.player1array = [];
+      this.currentBricks2 = null;
+      this.player2array = [];
 
     }
     newPlayer(numberOfPlayers) {
@@ -31,49 +34,49 @@ class PlayerData {
      makeSheds() {
     if (this.players.length === 2) {
       var player1Div = $('<div>').addClass("sheds").attr("id", "shed1").css({
-        'background-color': 'white',
+        'background-color': 'burlywood',
         'left': '15%',
       })
       var player2Div = $('<div>').addClass("sheds").attr("id", "shed2").css({
-        'background-color': 'white',
+        'background-color': 'burlywood',
         'left': '30%',
       })
       $(player1Div).appendTo('#shed');
       $(player2Div).appendTo('#shed');
     }
-
-    // if (this.players.length > 2) {
-    //   var player3Div = $('<div>').addClass("sheds").css({
-    //     'background-color': 'black',
-    //     'right': '30%',
-    //   })
-    //   $(player3Div).appendTo('#shed');
-    // }
-    // if (this.players.length > 2) {
-    //   var player4Div = $('<div>').addClass("sheds").css({
-    //     'background-color': 'gray',
-    //     'right': '15%',
-    //   })
-    //   $(player4Div).appendTo('#shed');
-    // }
   }
-
-    // playRound (){
-    //   ++this.numberOfRounds;
-    //   if(this.numberOfRounds === 6){
-    //     this.numberOfRounds = 0;
-    //   }
-    // }
-
     addBrickToBoat(){
-      this.currentBricks --;
+      if (this.playerMoveCount === 1){
+        this.currentBricks1--;
+        this.player1array.pop();
+      }
+      else {
+        this.currentBricks2--;
+        this.player2array.pop();
+
+      }
+
     }
     initializeBricks(){
-      var newDiv1 = $("<div>").addClass('pyramid-blocks');
-      var newDiv2 = $("<div>").addClass('pyramid-blocks');
-      var newDiv3 = $("<div>").addClass('pyramid-blocks');
-      var newDiv4 = $("<div>").addClass('pyramid-blocks');
-      var newDiv5 = $("<div>").addClass('pyramid-blocks');
+      this.currentBricks1 = 2;
+      this.currentBricks2 = 3;
+      this.player1array = ['white','white'];
+      this.player2array = ['black','black','black'];
+      var newDiv1 = $("<div>").addClass('pyramid-blocks').css({
+        'background-color' : 'white'
+      });
+      var newDiv2 = $("<div>").addClass('pyramid-blocks').css({
+        'background-color': 'white'
+      });
+      var newDiv3 = $("<div>").addClass('pyramid-blocks').css({
+        'background-color': 'black'
+      });
+      var newDiv4 = $("<div>").addClass('pyramid-blocks').css({
+        'background-color': 'black'
+      });
+      var newDiv5 = $("<div>").addClass('pyramid-blocks').css({
+        'background-color': 'black'
+      });
 
       $("#shed1").append(newDiv1);
       $("#shed1").append(newDiv2);
@@ -82,29 +85,46 @@ class PlayerData {
       $("#shed2").append(newDiv4);
       $("#shed2").append(newDiv5);
 
-
-      // $('#shed1').append(newDiv).addClass('pyramid-blocks');
-      // // $('#shed1').append(newD).addClass('pyramid-blocks');
-      
-
-
-      
-
-
-      this.currentBricks;
     }
     addBrickToShed(){
-      
-      if(this.currentBricks < 3){
-        var newDiv1 = $("<div>").addClass('pyramid-blocks');
-        var newDiv2 = $("<div>").addClass('pyramid-blocks');
-        var newDiv3 = $("<div>").addClass('pyramid-blocks');
+      var currentBricks = null;
+      var blockColor = "";
+      if (this.playerMoveCount === 1){
+        currentBricks = this.currentBricks1;
+        blockColor = "white";
+      }
+      else {
+        currentBricks = this.currentBricks2;
+        blockColor = "black";
+      }
+
+      if(currentBricks < 3){
+        var newDiv1 = $("<div>").addClass('pyramid-blocks').css({
+          'background-color': blockColor
+        });
+        var newDiv2 = $("<div>").addClass('pyramid-blocks').css({
+          'background-color': blockColor
+        });
+        var newDiv3 = $("<div>").addClass('pyramid-blocks').css({
+          'background-color': blockColor
+        });
 
         $("#shed"+this.playerMoveCount).append(newDiv1);
         $("#shed"+this.playerMoveCount).append(newDiv2);
         $("#shed"+this.playerMoveCount).append(newDiv3);
+        if (this.playerMoveCount == 1){
+          this.currentBricks1 += 3;
+          for (var integerI = 0; integerI < 3;integerI ++){
+            this.player1array.push("white");
+          }
+        }
+        else {
+          this.currentBricks2 += 3;
+          for (var newIntegerI = 0; newIntegerI < 3; integerI++) {
+            this.player1array.push("black");
+          }
+        }
 
-        this.currentBricks += 3;
         console.log("move count: ", this.playerMoveCount);
 
       } else {
@@ -119,7 +139,7 @@ class PlayerData {
       console.log("move count: ", this.playerMoveCount);
       return this.playerMoveCount;
     }
-  
+
     addShedClick(){
      $("#shed"+this.playerMoveCount).click(this.addBrickToShed);
     }
@@ -127,9 +147,12 @@ class PlayerData {
     getPlayerMoveCount() {
       return this.playerMoveCount;
     }
-
-
-
+    getPlayer1Array() {
+      return this.player1array;
+    }
+    getPlayer2Array() {
+      return this.player2array;
+    }
 
 }
 

@@ -9,9 +9,9 @@ function startApp(){
     game = new Imhotep('body');
     players = new PlayerData();
     // pyramid = new Pyramid(1, ['black', 'white', 'black', 'black']);
-    var playerMoveCount = players.getPlayerMoveCount();
-    boat = new Boat(playerMoveCount);
-    console.log("test", playerMoveCount);
+    var player1blocks = players.getPlayer1Array;
+    var player2blocks = players.getPlayer2Array;
+    boat = new Boat(players.getPlayerMoveCount.bind(players),player1blocks,player2blocks);
     $("#loadMap").click(function(){
         game.startGame();
         boat.render();
@@ -19,22 +19,17 @@ function startApp(){
         players.makeSheds();
         players.initializeBricks();
         players.addShedClick();
+        boat = new Boat(players.getPlayerMoveCount.bind(players), player1blocks, player2blocks);
         boat.boatClickHandler();
         var blockArray = boat.getBoatBrickArray();
-        pyramid = new Pyramid(playerMoveCount, blockArray);
-        pyramid.render();
+        // pyramid = new Pyramid(playerMoveCount, blockArray);
+        // pyramid.render();
+        // pyramid.pyramidClickHandler();
+        // var blackScore = pyramid.getBlackScore();
+        // var whiteScore = pyramid.getWhiteScore();
+        // console.log(blackScore);
+        // console.log(whiteScore);
 
-        pyramid.pyramidClickHandler();
-        pyramid.doScore();
-        var blackScore = pyramid.getBlackScore();
-        var whiteScore = pyramid.getWhiteScore();
-        console.log(blackScore);
-        console.log(whiteScore);
-
-    })
-
-    $("#shed1").click(function(){
-        console.log("asdfkasjdf");
     })
 
 }
@@ -58,4 +53,3 @@ function startApp(){
 
 
 //     })
-
