@@ -1,6 +1,8 @@
 class Boat {
   constructor(playerMoveCount) {
     this.playerMoveCount = playerMoveCount;
+    this.player1MoveCount= null;
+    this.player2MoveCount = null;
     this.shipSailed = false;
     this.blockArray = [];
     this.addBrickToBoat = this.addBrickToBoat.bind(this);
@@ -30,7 +32,7 @@ class Boat {
         css: {
           'background-color' : 'black'
         }
-  
+
       });
 
       divToBoat.appendTo("#boat");
@@ -43,7 +45,7 @@ class Boat {
       this.playerMoveCount = 1;
     }
 
-    
+
   }
   boatClickHandler(){
       $("#boat").click(this.addBrickToBoat);
@@ -89,6 +91,21 @@ class Boat {
     // inventorySizeContainer.append(this.domElements.inventorySize);
     // this.domElements.container.append(inventorySizePoints);
 
+  }
+  getPlayer1MoveCount() {
+    return this.player1MoveCount;
+  }
+  getPlayer2MoveCount() {
+    return this.player2MoveCount;
+  }
+  removeBlockFromPlayerShed() {
+    if (this.playerMoveCount === 1) {
+      $('#shed1 pyramid-blocks:last-child').remove();
+      this.player1MoveCount++;
+    } else if (this.playerMoveCount === 2) {
+      $('#shed2 pyramid-blocks:last-child').remove();
+      this.player2MoveCount++;
+    }
   }
 }
 

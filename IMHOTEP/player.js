@@ -6,7 +6,10 @@ class PlayerData {
       this.playerMoveCount = 1;
       this.numberOfRounds = null;
       this.addBrickToShed = this.addBrickToShed.bind(this);
-      this.currentBricks = 1;
+      this.player1CurrentBricks = 2;
+      this.player2CurrentBricks = 3;
+      this.player1MoveCount = null;
+      this.player2MoveCount = null;
 
     }
     newPlayer(numberOfPlayers) {
@@ -14,15 +17,11 @@ class PlayerData {
         return this.players = [
           {
           playerNumber: 1,
-          currentColorOfBricks: null,
-          numberOfBricks: 2,
-          numberOfPoints: null,
+          currentColorOfBricks: null
         },
         {
           playerNumber: 2,
           currentColorOfBricks: null,
-          numberOfBricks: 3,
-          numberOfPoints: null,
         },
       ];
       }
@@ -41,32 +40,16 @@ class PlayerData {
       $(player1Div).appendTo('#shed');
       $(player2Div).appendTo('#shed');
     }
-
-    // if (this.players.length > 2) {
-    //   var player3Div = $('<div>').addClass("sheds").css({
-    //     'background-color': 'black',
-    //     'right': '30%',
-    //   })
-    //   $(player3Div).appendTo('#shed');
-    // }
-    // if (this.players.length > 2) {
-    //   var player4Div = $('<div>').addClass("sheds").css({
-    //     'background-color': 'gray',
-    //     'right': '15%',
-    //   })
-    //   $(player4Div).appendTo('#shed');
-    // }
   }
 
-    // playRound (){
-    //   ++this.numberOfRounds;
-    //   if(this.numberOfRounds === 6){
-    //     this.numberOfRounds = 0;
-    //   }
-    // }
-
     addBrickToBoat(){
-      this.currentBricks --;
+      if (this.playerMoveCount === 1){
+        this.player1MoveCount++;
+        this.player1CurrentBricks--;
+      } else {
+        this.player2MoveCount++;
+        this.player2CurrentBricks--;
+      }
     }
     initializeBricks(){
       var newDiv1 = $("<div>").addClass('pyramid-blocks');
@@ -83,19 +66,16 @@ class PlayerData {
       $("#shed2").append(newDiv5);
 
 
-      // $('#shed1').append(newDiv).addClass('pyramid-blocks');
-      // // $('#shed1').append(newD).addClass('pyramid-blocks');
-      
-
-
-      
-
-
-      this.currentBricks;
+    }
+    removeBrickFromShed(){
+      if (this.playerMoveCount === 1) {
+        this.player1CurrentBricks--;
+      } else {
+        this.player2CurrentBricks--;
+      }
     }
     addBrickToShed(){
-      
-      if(this.currentBricks < 3){
+      if(this.player1CurrentBricks < 3 && this.playerMoveCount ===1){
         var newDiv1 = $("<div>").addClass('pyramid-blocks');
         var newDiv2 = $("<div>").addClass('pyramid-blocks');
         var newDiv3 = $("<div>").addClass('pyramid-blocks');
@@ -104,34 +84,60 @@ class PlayerData {
         $("#shed"+this.playerMoveCount).append(newDiv2);
         $("#shed"+this.playerMoveCount).append(newDiv3);
 
-        this.currentBricks += 3;
+        this.player1CurrentBricks += 3;
         console.log("move count: ", this.playerMoveCount);
 
-      } else {
+      } else if(!this.player1CurrentBricks < 3 && this.playerMoveCount === 1) {
+        alert('You cannot have more than 5 blocks');
+      } else if (this.player2CurrentBricks < 3 && this.playerMoveCount === 2) {
+        var newDiv1 = $("<div>").addClass('pyramid-blocks');
+        var newDiv2 = $("<div>").addClass('pyramid-blocks');
+        var newDiv3 = $("<div>").addClass('pyramid-blocks');
+
+        $("#shed" + this.playerMoveCount).append(newDiv1);
+        $("#shed" + this.playerMoveCount).append(newDiv2);
+        $("#shed" + this.playerMoveCount).append(newDiv3);
+
+        this.player2CurrentBricks += 3;
+        console.log("move count: ", this.playerMoveCount);
+
+      } else if (!this.player2CurrentBricks < 3 && this.playerMoveCount === 2) {
         alert('You cannot have more than 5 blocks');
       }
+
       if (this.playerMoveCount == 1){
+        this.player1MoveCount++;
         this.playerMoveCount = 2;
       }
       else {
+        this.player2MoveCount++;
         this.playerMoveCount = 1;
       }
       console.log("move count: ", this.playerMoveCount);
       return this.playerMoveCount;
     }
-  
-    addShedClick(){
-     $("#shed"+this.playerMoveCount).click(this.addBrickToShed);
-    }
 
+    addShedClick(){
+     $(".sheds").click(this.addBrickToShed);
+    }
+    getPlayer1BrickCount(){
+      return this.player1CurrentBricks;
+    }
+    getPlayer2BrickCount() {
+      return this.player2CurrentBricks;
+    }
     getPlayerMoveCount() {
       return this.playerMoveCount;
     }
+    getPlayer1MoveCount() {
+      return this.player1MoveCount;
+    }
+    getPlayer2MoveCount() {
+      return this.player2MoveCount;
+    }
 
+  }
 
-
-
-}
 
 
 
