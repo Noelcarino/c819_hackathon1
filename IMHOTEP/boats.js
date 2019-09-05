@@ -20,7 +20,7 @@ class Boat {
       }
     })
 
-    this.domElements.container.appendTo(".ship");
+    this.domElements.container.appendTo(".ship-container");
 
 
     // var inventorySizeContainer = $("<aside>", {

@@ -1,15 +1,28 @@
 var game;
 var boat;
+var players;
 $(document).ready( startApp );
 
 function startApp(){
     game = new Imhotep('body');
-    $("#button").click(function(){
+    players = new Players();
+    boat = new Boat();
+
+    $("#loadMap").click(function(){
+        // load the map
         game.startGame();
 
+        // load the sheds
     })
     
-    boat = new Boat();
-    boat.render();
+    players.newPlayer(2);
+
+    $("#loadPlayers").click(function(){
+        players.makeSheds();
+    })
+    
+    $("#addBoat").click(function(){
+        boat.render();
+    })
 }
 
