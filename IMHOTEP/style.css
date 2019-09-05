@@ -136,6 +136,9 @@ span{
     /* transition: 0.5s; */
     opacity: 1;
 }
+.scoreTargetBox{
+    font-size: 35px;
+}
 
 
 .pyramid-container {
@@ -182,9 +185,16 @@ span{
     background-size: contain;
     background-position: center;
 
+    
+
 }
 .boat {
     margin:auto;
+    margin: auto ;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
     height: 90px;
     width: 270px;
     background-image: url('images/queenmary.jpg');
@@ -213,6 +223,11 @@ span{
     background-position: center;
 
     padding: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    
 }
 
 
@@ -224,31 +239,53 @@ span{
     /* flex-direction: column; */
     /* justify-content: space-between; */
     /* justify-content: flex-start; */
-    height: 30%;
-    width: 30%;
+    height: 63%;
+    width: 33%;
 
     /* bottom: 11%; */
-    border: 2px solid black;
+    border: 3px solid black;
+    border-radius: 5px;
     transition: 0.5s;
+    opacity: 0.8;
 }
 .sheds:hover{
     background-color: black;
-    border: 2px solid white;
+    border: 5px solid white;
     transition: 0.5s;
+    opacity: 1;
+    border-radius: 15px;
 }
-#shed2:hover{
-    background-color: black;
+#shed1{
+    background-image: url('images/whiteShed.png');
+    background-size:cover;
+    background-position: center;
+
+    margin: auto ;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
+#shed2{
+    background-image: url('images/blackShed.png');
+    background-size:cover;
+    background-position: center;
+
+    margin: auto ;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
 
 
 
 
 
 .pyramid-blocks{
-    background-color: rgb(212, 27, 126);
+    border: 5px solid black;;
     margin: 3px;
-    height: 27%;
-    width: 13%;
+    height: 25px;
+    width: 25px;
 }
 
 
