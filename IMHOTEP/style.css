@@ -99,6 +99,7 @@ span{
 
     text-align: center;
     font-size: 15px;
+
 }
 #scoreBoard{
     display: flex;
@@ -195,7 +196,8 @@ span{
     border-radius: 15px;
     position: relative;
     
-    transition: 1s;
+
+    transition: 0.5s;
     padding: auto;
 }
 .boat:hover{
@@ -224,7 +226,7 @@ span{
     /* justify-content: flex-start; */
     height: 30%;
     width: 30%;
- 
+
     /* bottom: 11%; */
     border: 2px solid black;
     transition: 0.5s;
