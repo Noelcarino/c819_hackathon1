@@ -1,5 +1,10 @@
 
 body {
+
+
+
+    text-align: center;
+    margin: 10px;
     padding: 10px;
     background-color: darkslategrey;
     background-image: url('images/background.jpg');
@@ -190,6 +195,8 @@ body {
 
     padding: auto;
 }
+
+
 .sheds{
     margin: auto 150px;
     display: flex;
@@ -228,4 +235,16 @@ body {
 
 .hidden{
     display: none;
+.boat {
+     height: 150px;
+        width: 500px;
+        background-image: url('ship.png');
+        background-size: cover;
+        background-position: center;
+        /* background-color: white; */
+
+        border: 3px solid #73AD21;
+        position: relative;
+
+        margin: auto;
 }
