@@ -49,14 +49,15 @@ body {
 
 
 .pyramid {
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
-    position: absolute;
+    /* position: absolute; */
     flex-direction: column;
     justify-content: space-between;
     justify-content: flex-start;
     background-color: rgb(154, 175, 31);
-    height: 22%;
+    height: 50%;
     left: 6%;
     bottom: 468px;
     width: 51%;
