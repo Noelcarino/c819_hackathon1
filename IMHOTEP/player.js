@@ -1,15 +1,14 @@
-class Players {
+class PlayerData {
     constructor () {
-      this.playerArray = [];
-      // this.startingNumberOfBlocks = numberOfBlocks;
-      this.currentBricks = null;
-      // this.colorOfBlocks = colorOfBlocks;
-      this.currentNumberOfPoints = null;
+      this.players = [
+
+      ],
+      this.playerMove = null;
       this.numberOfRounds = null;
-      // this.shed = makeShed();
+
     }
      makeSheds() {
-    if (this.playerArray.length === 2) {
+    if (this.players.length === 2) {
       var player1Div = $('<div>').addClass("sheds").css({
         'background-color': 'white',
         'left': '15%',
@@ -18,23 +17,23 @@ class Players {
         'background-color': 'dark brown',
         'left': '30%',
       })
-      $(player1Div).appendTo('#ship');
-      $(player2Div).appendTo('#ship');
+      $(player1Div).appendTo('#shed');
+      $(player2Div).appendTo('#shed');
     }
 
-    if (this.playerArray.length > 2) {
+    if (this.players.length > 2) {
       var player3Div = $('<div>').addClass("sheds").css({
         'background-color': 'black',
         'right': '30%',
       })
-      $(player3Div).appendTo('#ship');
+      $(player3Div).appendTo('#shed');
     }
-    if (this.playerArray.length > 2) {
+    if (this.players.length > 2) {
       var player4Div = $('<div>').addClass("sheds").css({
         'background-color': 'gray',
         'right': '15%',
       })
-      $(player4Div).appendTo('#ship');
+      $(player4Div).appendTo('#shed');
     }
   }
 
@@ -46,17 +45,28 @@ class Players {
     }
     newPlayer(numberOfPlayers) {
       if(numberOfPlayers === 2){
-        return this.playerArray = ['player1', 'player2'];
+        return this.playerArray = [
+          {
+          playerNumber: 1,
+          currentColorOfBricks: null,
+          numberOfBricks: null,
+          numberOfPoints: null,
+        },
+        {
+          playerNumber: 2,
+          currentColorOfBricks: null,
+          numberOfBricks: null,
+          numberOfPoints: null,
+        },
+      ];
       }
-      if(numberOfPlayers === 3){
-        return this.playerArray = ['player1', 'player2', 'player3'];
-      }
-      if(numberOfPlayers === 4){
-        return this.playerArray = ['player1', 'player2', 'player3', 'player4'];
-      }
+
     }
     addBrickToBoat(){
       this.currentBricks -1;
+    }
+    initializeBricks(){
+      this.currentBricks;
     }
     addBrickToShed(){
       if(this.currentBricks <=2){
@@ -65,9 +75,132 @@ class Players {
         alert('You cannot have more than 5 blocks');
       }
     }
+    addBrickToBoat(){
+
+    }
+
     sendBoat(){
-      Boat.shipSailed = true;
+      // Boat.shipSailed = true;
     }
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//leave here for if we decide to do 4 players
+// if(numberOfPlayers === 3){
+      //   return this.playerArray = [
+      //     {
+      //       playerNumber: 1;
+      //       currentColorOfBricks: null;
+      //       numberOfBricks: null;
+      //       numberOfPoints: null,
+      //     },
+      //     {
+      //       playerNumber: 2;
+      //       currentColorOfBricks: null;
+      //       numberOfBricks: null;
+      //       numberOfPoints: null,
+      //     },
+      //     {
+      //       playerNumber: 3;
+      //       currentColorOfBricks: null;
+      //       numberOfBricks: null;
+      //       numberOfPoints: null,
+      //     },
+      //   ];
+      // }
+      // if(numberOfPlayers === 4){
+      //   return this.players = [
+      //     {
+      //       playerNumber: 1;
+      //       currentColorOfBricks: null;
+      //       numberOfBricks: null;
+      //       numberOfPoints: null,
+      //     },
+      //     {
+      //       playerNumber: 2;
+      //       currentColorOfBricks: null;
+      //       numberOfBricks: null;
+      //       numberOfPoints: null,
+      //     },
+      //     {
+      //       playerNumber: 3;
+      //       currentColorOfBricks: null;
+      //       numberOfBricks: null;
+      //       numberOfPoints: null,
+      //     },
+      //     {
+      //       playerNumber: 4;
+      //       currentColorOfBricks: null;
+      //       numberOfBricks: null;
+      //       numberOfPoints: null,
+      //     },
+        // ];
+      // }
