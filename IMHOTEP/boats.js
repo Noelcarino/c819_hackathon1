@@ -6,6 +6,7 @@ class Boat {
     this.shipSailed = false;
     this.blockArray = [];
     this.addBrickToBoat = this.addBrickToBoat.bind(this);
+    this.removeBlockFromPlayerShed = this.removeBlockFromPlayerShed.bind(this);
     // this.boatBrickArray: null
 
 
@@ -26,7 +27,7 @@ class Boat {
       divToBoat.appendTo("#boat");
       this.blockArray.push("white");
 
-    } else {
+    } else  {
       var divToBoat = $("<div>", {
         class: "pyramid-blocks",
         css: {
@@ -49,6 +50,8 @@ class Boat {
   }
   boatClickHandler(){
       $("#boat").click(this.addBrickToBoat);
+    $("#boat").click(this.removeBlockFromPlayerShed);
+
       console.log("dafgsdfbvsdfv");
   }
 
@@ -99,13 +102,15 @@ class Boat {
     return this.player2MoveCount;
   }
   removeBlockFromPlayerShed() {
+    console.log("it's happening");
     if (this.playerMoveCount === 1) {
-      $('#shed1 pyramid-blocks:last-child').remove();
+      $('#shed1 div:last-child').remove();
       this.player1MoveCount++;
     } else if (this.playerMoveCount === 2) {
-      $('#shed2 pyramid-blocks:last-child').remove();
+      $('#shed2 div:last-child').remove();
       this.player2MoveCount++;
     }
+    console.log("it's working");
   }
 }
 

@@ -31,13 +31,11 @@ class PlayerData {
     }
      makeSheds() {
     if (this.players.length === 2) {
-      var player1Div = $('<div>').addClass("sheds").attr("id", "shed1").css({
-        // 'background-color': 'burlywood',
-      })
-      var player2Div = $('<div>').addClass("sheds").attr("id", "shed2").css({
-        // 'background-color': 'burlywood',
-        'left': '30%',
-      })
+
+      var player1Div = $('<div>').addClass("sheds").attr("id", "shed1");
+      var player2Div = $('<div>').addClass("sheds").attr("id", "shed2");
+
+
       $(player1Div).appendTo('#shed');
       $(player2Div).appendTo('#shed');
     }
@@ -78,7 +76,7 @@ class PlayerData {
 
       $("#shed2").append(newDiv3);
       $("#shed2").append(newDiv4);
-      // $("#shed2").append(newDiv5);
+      $("#shed2").append(newDiv5);
 
 
     }
