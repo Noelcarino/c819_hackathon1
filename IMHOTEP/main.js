@@ -1,19 +1,42 @@
 var game;
 var boat;
 var players;
+var pyramid;
+
 $(document).ready( startApp );
 
 function startApp(){
     game = new Imhotep('body');
-
-    boat = new Boat();
-    $("#button").click(function(){
+    players = new PlayerData();
+    // pyramid = new Pyramid(1, ['black', 'white', 'black', 'black']);
+    var playerMoveCount = players.getPlayerMoveCount();
+    boat = new Boat(playerMoveCount);
+    console.log("test", playerMoveCount);
+    $("#loadMap").click(function(){
         game.startGame();
         boat.render();
+        players.newPlayer(2);
+        players.makeSheds();
+        players.initializeBricks();
+        players.addShedClick();
+        boat.boatClickHandler();
+        var blockArray = boat.getBoatBrickArray();
+        pyramid = new Pyramid(playerMoveCount, blockArray);
+        pyramid.render();
+
+        pyramid.pyramidClickHandler();
+        pyramid.doScore();
+        var blackScore = pyramid.getBlackScore();
+        var whiteScore = pyramid.getWhiteScore();
+        console.log(blackScore);
+        console.log(whiteScore);
+
     })
 
-    // boat = new Boat();
-    // boat.render();
+    $("#shed1").click(function(){
+        console.log("asdfkasjdf");
+    })
+
 }
 
 
@@ -21,24 +44,18 @@ function startApp(){
 //     boat = new Boat();
 //     $("#button").click(function(){
 //         game.startGame();
-//         pyramid.render();
-//         pyramid.addPyramidBlocks();
-//         pyramid.doScore();
-//         var blackScore = pyramid.getBlackScore();
-//         var whiteScore = pyramid.getWhiteScore();
-//         console.log(blackScore);
-//         console.log(whiteScore);
+        // pyramid.render();
+        // pyramid.addPyramidBlocks();
+        // pyramid.doScore();
+        // var blackScore = pyramid.getBlackScore();
+        // var whiteScore = pyramid.getWhiteScore();
+        // console.log(blackScore);
+        // console.log(whiteScore);
 //         boat.render();
 //     })
 
-//     players = new Players();
 //     boat = new Boat();
 
-//     $("#loadMap").click(function(){
-//         // load the map
-//         game.startGame();
-//         players.newPlayer(2);
-//         players.makeSheds();
-//         boat.render();
+
 //     })
 

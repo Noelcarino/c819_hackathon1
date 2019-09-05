@@ -23,7 +23,7 @@ body {
     border: 2px solid black;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     margin: auto;
     padding: auto;
     height: 30%;
@@ -63,21 +63,27 @@ body {
     padding: 4px;
     align-content: baseline;
 }
+
+
+.sheds{
+    margin: auto 20px;
+    display: flex;
+    flex-wrap: wrap;
+    /* position: absolute; */
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+    /* justify-content: flex-start; */
+    height: 30%;
+    width: 30%;
+    bottom: 11%;
+    border: 2px solid black;
+}
 .pyramid-blocks{
     background-color: rgb(212, 27, 126);
     margin: 3px;
     height: 27%;
     width: 13%;
 }
-
-.sheds{
-    height: 10%;
-    width: 10%;
-    bottom: 11%;
-    position: absolute;
-    border: 2px solid black;
-}
-
 .boat {
      height: 150px;
         width: 500px;
@@ -88,6 +94,6 @@ body {
 
         border: 3px solid #73AD21;
         position: relative;
-        top: 30px;
-        right: -310px;
+        
+        margin: auto;
 }

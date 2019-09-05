@@ -1,8 +1,11 @@
 class Boat {
-  constructor(img, boatBrickArray) {
-    this.image = img;
+  constructor(playerMoveCount) {
+    this.playerMoveCount = playerMoveCount;
     this.shipSailed = false;
+    this.blockArray = [];
+    this.addBrickToBoat = this.addBrickToBoat.bind(this);
     // this.boatBrickArray: null
+
 
 
     this.domElements = {
@@ -10,10 +13,56 @@ class Boat {
       boatBrickArray: null
     }
   }
+  addBrickToBoat(){
+    if (this.playerMoveCount == 1){
+      var divToBoat = $("<div>", {
+        class: "pyramid-blocks",
+        css: {
+          'background-color' : 'white'
+        }
+      });
+      divToBoat.appendTo("#boat");
+      this.blockArray.push("white");
+
+    } else {
+      var divToBoat = $("<div>", {
+        class: "pyramid-blocks",
+        css: {
+          'background-color' : 'black'
+        }
+  
+      });
+
+      divToBoat.appendTo("#boat");
+      this.blockArray.push("black");
+    }
+    if (this.playerMoveCount == 1){
+      this.playerMoveCount = 2;
+    }
+    else {
+      this.playerMoveCount = 1;
+    }
+
+    
+  }
+  boatClickHandler(){
+      $("#boat").click(this.addBrickToBoat);
+      console.log("dafgsdfbvsdfv");
+  }
+
+  getBoatBrickArray() {
+    return this.blockArray;
+  }
+
+
   render() {
     this.domElements.container = $("<div>", {
       class: 'boat',
-      onclick: 'boat.render()',
+      id: 'boat',
+      // onclick: 'boat.render()',
+      // css: {
+      //   "float": "left"
+      // }
       // css: {
       //   "height": "120px",
       //   "width": "500px",
@@ -27,7 +76,6 @@ class Boat {
       // }
 
     })
-    console.log("hello");
 
     this.domElements.container.appendTo(".ship-container");
 
