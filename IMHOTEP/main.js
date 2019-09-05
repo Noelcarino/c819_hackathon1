@@ -37,6 +37,7 @@ function startApp(){
         console.log(blackScore);
         console.log(whiteScore);
         $("#loadMap").addClass("hidden");
+        $("#directions").addClass("hidden");
 
 
     })
