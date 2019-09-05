@@ -45,6 +45,9 @@ class Pyramid {
   pyramidClickHandler(){
     $(".pyramid").click(this.addPyramidBlocks);
 
+    $(".pyramid").click(function(){
+      $(".pyramid").addClass('pyramid-clicked');
+  })
     // this.blockArray = [];
   }
 

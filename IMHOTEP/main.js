@@ -30,12 +30,18 @@ function startApp(){
         var whiteScore = pyramid.getWhiteScore();
         console.log(blackScore);
         console.log(whiteScore);
+        $("#loadMap").addClass("hidden");
+
 
     })
 
     $("#shed1").click(function(){
         console.log("asdfkasjdf");
     })
+    $(".pyramid").click(function(){
+        console.log("hello");
+    })
+
 
 }
 

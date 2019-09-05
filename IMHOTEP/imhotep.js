@@ -24,9 +24,15 @@ class Imhotep {
         var gameAreaDiv = $("body");
         this.dom.container.appendTo(gameAreaDiv);
 
+        var statsDiv = $("<div>").addClass('container stats').appendTo("#gameArea").text("SCOREBOARD");
         var pyramidAreaDiv = $("<div>").addClass("container pyramid-container").appendTo("#gameArea");
         var shipAreaDiv = $("<div>").addClass("container ship-container").appendTo("#gameArea");
         var shedAreaDiv = $("<div>").attr("id", "shed").addClass("container shed-container").appendTo('#gameArea');
-        console.log('asdff');
+    
+        var scoreBoardDiv = $("<div>").attr("id","scoreBoard").appendTo(statsDiv); 
+        var whiteScore = $("<div>").attr("id", "whiteScore").addClass("scoreBox").appendTo(scoreBoardDiv).text("white");
+        var blackScore = $("<div>").attr("id", "blackScore").addClass("scoreBox").appendTo(scoreBoardDiv).text("black");
+
+    
     }
 }
