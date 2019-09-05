@@ -24,12 +24,10 @@ function startApp(){
         players.makeSheds();
         players.initializeBricks();
         players.addShedClick();
-
         boat.boatClickHandler();
         var blockArray = boat.getBoatBrickArray();
         pyramid = new Pyramid(playerMoveCount, blockArray);
         pyramid.render();
-
         pyramid.pyramidClickHandler();
         pyramid.doScore();
         var blackScore = pyramid.getBlackScore();
