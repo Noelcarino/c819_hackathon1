@@ -77,3 +77,17 @@ body {
     position: absolute;
     border: 2px solid black;
 }
+
+.boat {
+     height: 150px;
+        width: 500px;
+        background-image: url('ship.png');
+        background-size: cover;
+        background-position: center;
+        /* background-color: white; */
+
+        border: 3px solid #73AD21;
+        position: relative;
+        top: 30px;
+        right: -310px;
+}

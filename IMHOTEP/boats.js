@@ -1,24 +1,33 @@
 class Boat {
-  constructor(img, inventorySize) {
+  constructor(img, boatBrickArray) {
     this.image = img;
-    this.points = {
-      invetorySize: null
+    this.shipSailed = false;
+    // this.boatBrickArray: null
 
-    }
+
     this.domElements = {
       container: null,
-      inventorySize: null
+      boatBrickArray: null
     }
   }
   render() {
     this.domElements.container = $("<div>", {
       class: 'boat',
-      css: {
-        "height": "50px",
-        "width": "50px",
-        "background-color": "white",
-      }
+      onclick: 'boat.render()',
+      // css: {
+      //   "height": "120px",
+      //   "width": "500px",
+      //   // "background-color": "white",
+      //   "background- image": "url()",
+      //   "border": "3px solid #73AD21",
+      //   "position": "relative",
+      //   "top": "50px",
+      //   "right": "-310px",
+
+      // }
+
     })
+    console.log("hello");
 
     this.domElements.container.appendTo(".ship-container");
 
@@ -31,8 +40,9 @@ class Boat {
     // })
     // inventorySizeContainer.append(this.domElements.inventorySize);
     // this.domElements.container.append(inventorySizePoints);
-    // var shipContainer = $(".ship");
-    // shipContainer.append(this.domElements.container);
-    // return this.domElements.container;
+
   }
 }
+
+
+//boatBrickArray
