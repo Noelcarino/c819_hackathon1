@@ -11,6 +11,7 @@ class Imhotep {
         //render board;
         this.dom.container.append( boardElements );
         var boardElements = this.render();
+        console.log("HEL")
 
     }
 
