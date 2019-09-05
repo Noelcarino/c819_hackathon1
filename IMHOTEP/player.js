@@ -31,8 +31,11 @@ class PlayerData {
     }
      makeSheds() {
     if (this.players.length === 2) {
+
       var player1Div = $('<div>').addClass("sheds").attr("id", "shed1");
       var player2Div = $('<div>').addClass("sheds").attr("id", "shed2");
+
+
       $(player1Div).appendTo('#shed');
       $(player2Div).appendTo('#shed');
     }
