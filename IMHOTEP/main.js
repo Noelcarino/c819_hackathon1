@@ -11,18 +11,10 @@ function startApp(){
     $("#loadMap").click(function(){
         // load the map
         game.startGame();
-
-        // load the sheds
-    })
-    
-    players.newPlayer(2);
-
-    $("#loadPlayers").click(function(){
+        players.newPlayer(2);
         players.makeSheds();
-    })
-    
-    $("#addBoat").click(function(){
         boat.render();
     })
+    
 }
 

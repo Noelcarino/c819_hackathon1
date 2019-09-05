@@ -18,8 +18,8 @@ class Players {
         'background-color': 'dark brown',
         'left': '30%',
       })
-      $(player1Div).appendTo('#ship');
-      $(player2Div).appendTo('#ship');
+      $(player1Div).appendTo('#shed');
+      $(player2Div).appendTo('#shed');
     }
 
     if (this.playerArray.length > 2) {
