@@ -4,6 +4,7 @@ class Pyramid {
     this.blockArray = blockArray;
     this.blackScore = null;
     this.whiteScore = null;
+    this.addPyramidBlocks = this.addPyramidBlocks.bind(this);
     this.allBlocksForRoundArray = [];
     this.pointsArray = [3, 1, 2, 3, 4, 2, 3, 1, 2, 3, 2, 3, 1, 4];
     this.domElements = {
@@ -38,8 +39,15 @@ class Pyramid {
       });
       this.domElements.pyramidContainer.append(pyramidBlocks);
     }
-
+    this.blockArray = [];
   }
+
+  pyramidClickHandler(){
+    $(".pyramid").click(this.addPyramidBlocks);
+
+    // this.blockArray = [];
+  }
+
   render() {
     this.domElements.pyramidContainer = $("<div>", {
       class: 'pyramid',
