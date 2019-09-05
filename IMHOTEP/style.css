@@ -1,8 +1,5 @@
 
 body {
-
-
-
     text-align: center;
     margin: 10px;
     padding: 10px;
@@ -16,20 +13,45 @@ body {
     background-image: url('images/imhotep.png');
     background-size: cover;
     background-repeat: no-repeat;
-    /* margin-top: 50px; */
-    /* margin-right: 850px; */
-    float: left;
-    margin: 50px;
+
+    margin-bottom: 30px;
     height: 100px;
     width: 500px;
     font-size: 20px;
     padding: auto;
+
     opacity: 0.8;
     transition: 0.2s;
 }
 #loadMap:hover{
     opacity: 1;
     transition: 0.2s;
+}
+#directions{
+    background-color: darkslategray;
+    opacity: 0.9;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin: auto;
+    margin-top: 300px;
+    height: 400px;
+    width: 700px;
+    max-width: 700px;
+    border-radius: 25px;
+    overflow: scroll;
+}
+#directions > p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    font-size: 20px;
+}
+#messageToPlayer{
+    font-size: 50px;
+}
+span{
+    font-family: Chalkduster;
+    color: black;
+    font-size: 25px;
 }
 .gameArea {
     display: flex;
@@ -41,11 +63,9 @@ body {
     min-height: 520px;
     max-height: 800px;
     width: 90vw;
-    min-width: 600px;
-    max-width: 700px;
+    min-width: 800px;
+    max-width: 1000px;
     margin: auto;
-    
-
 }
 .container {
     display: flex;
@@ -54,8 +74,8 @@ body {
 
     margin: 3px auto;
     padding: auto;
-    height: 21%;
-    min-height: 20%;
+    height: 23%;
+    min-height: 22%;
     max-height: 24%;
     width: 70%;
     min-width: 450px;
@@ -70,7 +90,7 @@ body {
 .container:hover{
     border: 2px solid lightgray;
     transition: 0.5s;
-    height: 23%;
+    height: 24%;
 }
 .stats{
     background-image: url("images/score.jpeg");
@@ -79,7 +99,6 @@ body {
 
     text-align: center;
     font-size: 15px;
-    font-family: 
 }
 #scoreBoard{
     display: flex;
@@ -137,15 +156,15 @@ body {
     height: 50%;
     left: 6%;
     bottom: 468px;
-    width: 51%;
+    width: 45%;
     padding: 3px;
     align-content: baseline;
     opacity: 0.7;
-    transition: 0.3s;
+    transition: 0.7s;
 }
 .pyramid:hover{
     opacity: 1;
-    transition: 0.3s;
+    transition: 0.5s;
     height: 55%;
     width: 56%;
 }
@@ -165,8 +184,8 @@ body {
 }
 .boat {
     margin:auto;
-    height: 85px;
-    width: 250px;
+    height: 90px;
+    width: 270px;
     background-image: url('images/queenmary.jpg');
     background-size: cover;
     background-position: center;
@@ -176,16 +195,14 @@ body {
     border-radius: 15px;
     position: relative;
     
-    transition: 0.5s;
+    transition: 1s;
     padding: auto;
 }
 .boat:hover{
     border: 3px solid white;
-    transition: 0.5s;
     height: 100px;
     width: 300px;
-    transition: 0.5s;
-
+    transition: 0.3s;
 }
 .shed-container {
     background-image: url('images/shed_back.jpg');
@@ -198,7 +215,7 @@ body {
 
 
 .sheds{
-    margin: auto 150px;
+    margin: auto ;
     display: flex;
     flex-wrap: wrap;
     /* position: absolute; */
@@ -235,16 +252,4 @@ body {
 
 .hidden{
     display: none;
-.boat {
-     height: 150px;
-        width: 500px;
-        background-image: url('ship.png');
-        background-size: cover;
-        background-position: center;
-        /* background-color: white; */
-
-        border: 3px solid #73AD21;
-        position: relative;
-
-        margin: auto;
 }
