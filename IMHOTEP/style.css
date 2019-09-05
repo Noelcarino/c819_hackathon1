@@ -1,4 +1,7 @@
+
 body {
+    
+
     text-align: center;
     margin: 10px;
     padding: 10px;
@@ -13,6 +16,7 @@ body {
     background-color: lavender;
     margin: auto;
     position: relative;
+
 }
 
 .container {
@@ -31,14 +35,17 @@ body {
     background-color: lightgreen;
 }
 .ship-container {
-    background-color: lightskyblue;
+    /* background-color: lightskyblue; */
+    background-image: url('images/ocean.jpeg');
+    background-size: contain;
+    background-position: center;
+
 }
 .shed-container {
-    background-color: darkcyan;
+    /* background-color: darkcyan; */
+    background-image: url('images/desert.jpg');
+    background-size: contain;
 }
-
-
-
 
 
 .pyramid {
@@ -50,16 +57,17 @@ body {
     justify-content: flex-start;
     background-color: rgb(154, 175, 31);
     height: 22%;
-    left: 3%;
-    bottom: 395px;
-    width: 40%;
+    left: 6%;
+    bottom: 468px;
+    width: 51%;
     padding: 4px;
+    align-content: baseline;
 }
 .pyramid-blocks{
     background-color: rgb(212, 27, 126);
-    height: 28%;
-    width: 7%;
-
+    margin: 3px;
+    height: 27%;
+    width: 13%;
 }
 
 .sheds{
