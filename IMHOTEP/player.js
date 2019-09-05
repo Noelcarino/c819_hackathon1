@@ -32,11 +32,10 @@ class PlayerData {
      makeSheds() {
     if (this.players.length === 2) {
       var player1Div = $('<div>').addClass("sheds").attr("id", "shed1").css({
-        'background-color': 'burlywood',
-        'left': '15%',
+        // 'background-color': 'burlywood',
       })
       var player2Div = $('<div>').addClass("sheds").attr("id", "shed2").css({
-        'background-color': 'burlywood',
+        // 'background-color': 'burlywood',
         'left': '30%',
       })
       $(player1Div).appendTo('#shed');
