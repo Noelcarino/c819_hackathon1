@@ -34,7 +34,7 @@ body {
     padding-right: 50px;
     margin: auto;
     margin-top: 300px;
-    height: 400px;
+    height: 500px;
     width: 700px;
     max-width: 700px;
     border-radius: 25px;
@@ -90,7 +90,7 @@ span{
 .container:hover{
     border: 2px solid lightgray;
     transition: 0.5s;
-    height: 24%;
+    height: 23%;
 }
 .stats{
     background-image: url("images/score.jpeg");
@@ -109,8 +109,8 @@ span{
     /* background-color: white; */
 
     margin: auto;
-    height: 100px;
-    width: 300px;
+    height: 120px;
+    width: 350px;
 
     border-radius: 15px;
     transition: 2s;
@@ -120,6 +120,7 @@ span{
     transition: 1s;
 }
 .scoreBox{
+    border-radius: 10px;
     opacity: 0.7;
     text-align: center;
     color:white;
@@ -128,8 +129,8 @@ span{
     flex-wrap: wrap;
     flex-direction: column;
     margin: auto;
-    height: 70px;
-    width: 70px;
+    height: 100px;
+    width: 100px;
     transition: 0.5s
 }
 .scoreBox:hover{
@@ -139,7 +140,12 @@ span{
 .scoreTargetBox{
     font-size: 35px;
 }
-
+#roundCountDiv{
+    background-color: darkslategrey;
+    height: 100px;
+    width: 100px;
+    opacity: 1;
+}
 
 .pyramid-container {
     background-color: lightgreen;
@@ -149,40 +155,53 @@ span{
 
 }
 .pyramid {
+    overflow: scroll;
+    background-image: url('images/p-score.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    /* position: absolute; */
-    flex-direction: column;
+
+    flex-direction: column-reverse;
     justify-content: space-between;
     justify-content: flex-start;
     background-color: rgb(154, 175, 31);
-    height: 50%;
-    left: 6%;
-    bottom: 468px;
-    width: 45%;
+    height: 150px;
+    min-height: 100px;
+    max-height: 200px;
+
+    bottom: 400px;
+    width: 150px;
     padding: 3px;
     align-content: baseline;
-    opacity: 0.7;
+    opacity: 0.8;
     transition: 0.7s;
 }
 .pyramid:hover{
+
     opacity: 1;
     transition: 0.5s;
-    height: 55%;
-    width: 56%;
+    height: 170px;
+    width: 160px; 
 }
 .pyramid-clicked{
-    background-color: rgb(170, 175, 100);
+    opacity: 1;
+    transition: 1s;
+    height: 190px;
+    width: 180px;
+    /* background-color: rgb(170, 175, 100);
     height: 55%;
     width: 56%;
     opacity: 1;
-    transition: 2s;
+    transition: 2s; */
 }
 .ship-container {
     background-color: lightskyblue;
     background-image: url('images/river2.jpg');
-    background-size: contain;
+    background-size: cover;
     background-position: center;
 
     
@@ -284,8 +303,8 @@ span{
 .pyramid-blocks{
     border: 5px solid black;;
     margin: 3px;
-    height: 25px;
-    width: 25px;
+    height: 30px;
+    width: 30px;
 }
 
 

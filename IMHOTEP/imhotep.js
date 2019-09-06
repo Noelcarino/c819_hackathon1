@@ -32,8 +32,10 @@ class Imhotep {
         var scoreBoardDiv = $("<div>").attr("id","scoreBoard").appendTo(statsDiv);
         var whiteScore = $("<div>").attr("id", "whiteScore").addClass("scoreBox").appendTo(scoreBoardDiv).text("white");
         var blackScore = $("<div>").attr("id", "blackScore").addClass("scoreBox").appendTo(scoreBoardDiv).text("black");
-        var whiteScoreTarget = $("<div>").attr("id","whiteScoreTarget").addClass("scoreTargetBox").appendTo(whiteScore).text("5");
-        var blackScoreTarget = $("<div>").attr("id","blackScoreTarget").addClass("scoreTargetBox").appendTo(blackScore).text("7");
+        var whiteScoreTarget = $("<div>").attr("id","whiteScoreTarget").addClass("scoreTargetBox").appendTo(whiteScore)
+        var blackScoreTarget = $("<div>").attr("id","blackScoreTarget").addClass("scoreTargetBox").appendTo(blackScore)
+        
+        var roundCountDiv = $("<div>").attr("id", "roundCountDiv").addClass("scoreBox").appendTo(statsDiv).text("Round");
 
     }
 }
