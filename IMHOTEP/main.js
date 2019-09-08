@@ -40,9 +40,9 @@ function startApp(){
 
     })
 
-    $("#shed1").click(function(){
-        console.log("asdfkasjdf");
-    })
+    // $("#shed1").click(function(){
+    //     console.log("asdfkasjdf");
+    // })
     $(".pyramid").click(function(){
         console.log("hello");
     })

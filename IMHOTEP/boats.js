@@ -39,12 +39,12 @@ class Boat {
       divToBoat.appendTo("#boat");
       this.blockArray.push("black");
     }
-    if (this.playerMoveCount == 1){
-      this.playerMoveCount = 2;
-    }
-    else {
-      this.playerMoveCount = 1;
-    }
+    // if (this.playerMoveCount == 1){
+    //   this.playerMoveCount = 2;
+    // }
+    // else {
+    //   this.playerMoveCount = 1;
+    // }
 
 
   }
@@ -102,6 +102,7 @@ class Boat {
     return this.player2MoveCount;
   }
   removeBlockFromPlayerShed() {
+    debugger;
     console.log("it's happening");
     if (this.playerMoveCount === 1) {
       $('#shed1 div:last-child').remove();
@@ -109,6 +110,12 @@ class Boat {
     } else if (this.playerMoveCount === 2) {
       $('#shed2 div:last-child').remove();
       this.player2MoveCount++;
+    }
+    if (this.playerMoveCount == 1) {
+      this.playerMoveCount = 2;
+    }
+    else {
+      this.playerMoveCount = 1;
     }
     console.log("it's working");
   }
