@@ -53,8 +53,6 @@ class Pyramid {
   }
 
   pyramidClickHandler(){
-    console.log(this.blackScore);
-    console.log(this.whiteScore);
     $(".pyramid").click(this.addPyramidBlocks);
     $(".pyramid").click(this.doScore);
     $(".pyramid").click(this.displayScore);

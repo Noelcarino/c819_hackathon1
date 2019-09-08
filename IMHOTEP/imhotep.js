@@ -3,17 +3,12 @@ class Imhotep {
         this.dom = {
             container: $(displayDom)
         }
-
-
-
     }
     startGame(){
         //render board;
         this.dom.container.append( boardElements );
         var boardElements = this.render();
-
     }
-
     // render the game boards her
     render(){
         this.dom.container = $("<div>", {
