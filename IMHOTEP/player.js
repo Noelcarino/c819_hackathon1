@@ -96,6 +96,11 @@ class PlayerData {
         currentBricks = this.player2CurrentBricks;
         blockColor = 'black';
       }
+      //may use this to make it so the player can add blocks after
+      //they have added some to the boat and have less then 3 again
+      // var shedChildrenElements = $('#shed'+this.playerMoveCount).children();
+      // console.log(shedChildrenElements);
+      // // if()
       if(currentBricks < 3 ){
         var newDiv1 = $("<div>").addClass('pyramid-blocks').css({
           'background-color' : blockColor
