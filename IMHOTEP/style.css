@@ -235,14 +235,8 @@ span{
     margin: auto ;
     display: flex;
     flex-wrap: wrap;
-    /* position: absolute; */
-    /* flex-direction: column; */
-    /* justify-content: space-between; */
-    /* justify-content: flex-start; */
     height: 63%;
     width: 33%;
-
-    /* bottom: 11%; */
     border: 3px solid black;
     border-radius: 5px;
     transition: 0.5s;

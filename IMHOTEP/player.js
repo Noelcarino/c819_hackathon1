@@ -1,8 +1,6 @@
 class PlayerData {
     constructor () {
-      this.players = [
-
-      ],
+      this.players = [];
       this.playerMoveCount = 1;
       this.numberOfRounds = null;
       this.addBrickToShed = this.addBrickToShed.bind(this);
@@ -126,26 +124,12 @@ class PlayerData {
           this.playerMoveCount = 1;
           this.addShedClick();
         }
-      console.log("move count: ", this.playerMoveCount);
     }
     else{
       alert('You cannot have more than 5 blocks');
     }
   }
 
-
-    // switchShedClick() {
-    //   if(this.player1MoveCount === 1){
-    //     $("#shed2").off("click", this.addBrickToShed);
-    //     $("#shed1").on("click", this.addBrickToShed);
-    //   } else {
-    //     $("#shed1").off("click", this.addBrickToShed);
-    //     $("#shed2").on("click", this.addBrickToShed);
-    //   }
-    //   // "#shed" + this.playerMoveCount
-
-
-    // }
   addShedClick() {
       $("#shed" +this.playerMoveCount).on("click", this.addBrickToShed);
   }
@@ -166,123 +150,3 @@ class PlayerData {
     }
 
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//leave here for if we decide to do 4 players
-// if(numberOfPlayers === 3){
-      //   return this.playerArray = [
-      //     {
-      //       playerNumber: 1;
-      //       currentColorOfBricks: null;
-      //       numberOfBricks: null;
-      //       numberOfPoints: null,
-      //     },
-      //     {
-      //       playerNumber: 2;
-      //       currentColorOfBricks: null;
-      //       numberOfBricks: null;
-      //       numberOfPoints: null,
-      //     },
-      //     {
-      //       playerNumber: 3;
-      //       currentColorOfBricks: null;
-      //       numberOfBricks: null;
-      //       numberOfPoints: null,
-      //     },
-      //   ];
-      // }
-      // if(numberOfPlayers === 4){
-      //   return this.players = [
-      //     {
-      //       playerNumber: 1;
-      //       currentColorOfBricks: null;
-      //       numberOfBricks: null;
-      //       numberOfPoints: null,
-      //     },
-      //     {
-      //       playerNumber: 2;
-      //       currentColorOfBricks: null;
-      //       numberOfBricks: null;
-      //       numberOfPoints: null,
-      //     },
-      //     {
-      //       playerNumber: 3;
-      //       currentColorOfBricks: null;
-      //       numberOfBricks: null;
-      //       numberOfPoints: null,
-      //     },
-      //     {
-      //       playerNumber: 4;
-      //       currentColorOfBricks: null;
-      //       numberOfBricks: null;
-      //       numberOfPoints: null,
-      //     },
-        // ];
-      // }
