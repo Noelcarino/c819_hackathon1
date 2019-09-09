@@ -13,13 +13,11 @@ body {
     background-image: url('images/imhotep.png');
     background-size: cover;
     background-repeat: no-repeat;
-
     margin-bottom: 30px;
     height: 100px;
     width: 500px;
     font-size: 20px;
     padding: auto;
-
     opacity: 0.8;
     transition: 0.2s;
 }
@@ -58,7 +56,6 @@ span{
     flex-wrap: wrap;
     flex-direction: column;
     position: relative;
-
     height: 90vh;
     min-height: 520px;
     max-height: 800px;
@@ -71,7 +68,6 @@ span{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-
     margin: 3px auto;
     padding: auto;
     height: 23%;
@@ -82,7 +78,6 @@ span{
     max-width: 750px;
     border: 2px solid black;
     border-radius: 25px;
-
     overflow: hidden;
     opacity: 1;
     transition: 0.5s;
@@ -96,29 +91,26 @@ span{
     background-image: url("images/score.jpeg");
     background-size: cover;
     background-position: center;
-
     text-align: center;
     font-size: 15px;
-
 }
+
 #scoreBoard{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-
-    /* background-color: white; */
-
     margin: auto;
     height: 120px;
     width: 350px;
-
     border-radius: 15px;
     transition: 2s;
 }
+
 #scoreBoard:hover{
     background-color: grey;
     transition: 1s;
 }
+
 .scoreBox{
     border-radius: 10px;
     opacity: 0.7;
@@ -133,13 +125,15 @@ span{
     width: 100px;
     transition: 0.5s
 }
+
 .scoreBox:hover{
-    /* transition: 0.5s; */
     opacity: 1;
 }
+
 .scoreTargetBox{
     font-size: 35px;
 }
+
 #roundCountDiv{
     background-color: darkslategrey;
     height: 100px;
@@ -154,17 +148,16 @@ span{
     background-size: cover;
 
 }
+
 .pyramid {
     overflow: scroll;
     background-image: url('images/p-score.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-
     flex-direction: column-reverse;
     justify-content: space-between;
     justify-content: flex-start;
@@ -172,7 +165,6 @@ span{
     height: 150px;
     min-height: 100px;
     max-height: 200px;
-
     bottom: 400px;
     width: 150px;
     padding: 3px;
@@ -180,75 +172,63 @@ span{
     opacity: 0.8;
     transition: 0.7s;
 }
-.pyramid:hover{
 
+.pyramid:hover{
     opacity: 1;
     transition: 0.5s;
     height: 170px;
-    width: 160px; 
+    width: 160px;
 }
+
 .pyramid-clicked{
     opacity: 1;
     transition: 1s;
     height: 190px;
     width: 180px;
-    /* background-color: rgb(170, 175, 100);
-    height: 55%;
-    width: 56%;
-    opacity: 1;
-    transition: 2s; */
 }
+
 .ship-container {
     background-color: lightskyblue;
     background-image: url('images/river2.jpg');
     background-size: cover;
     background-position: center;
-
-
-
 }
+
 .boat {
     margin:auto;
     margin: auto ;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-
     height: 90px;
     width: 270px;
     background-image: url('images/queenmary.jpg');
     background-size: cover;
     background-position: center;
-    /* background-color: white; */
-
     border: 3px solid grey;
     border-radius: 15px;
     position: relative;
-
-
     transition: 0.5s;
     padding: auto;
 }
+
 .boat:hover{
     border: 3px solid white;
     height: 100px;
     width: 300px;
     transition: 0.3s;
 }
+
 .shed-container {
     background-image: url('images/shed_back.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-
     padding: auto;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-
-
 }
-
 
 .sheds{
     margin: auto ;
@@ -261,6 +241,7 @@ span{
     transition: 0.5s;
     opacity: 0.8;
 }
+
 .sheds:hover{
     background-color: black;
     border: 5px solid white;
@@ -268,21 +249,21 @@ span{
     opacity: 1;
     border-radius: 15px;
 }
+
 #shed1{
     background-image: url('images/whiteShed.png');
     background-size:cover;
     background-position: center;
-
     margin: auto ;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
 }
+
 #shed2{
     background-image: url('images/blackShed.png');
     background-size:cover;
     background-position: center;
-
     margin: auto ;
     display: flex;
     flex-wrap: wrap;
@@ -295,7 +276,6 @@ span{
     height: 30px;
     width: 30px;
 }
-
 
 .hidden{
     display: none;

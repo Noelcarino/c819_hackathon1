@@ -2,19 +2,13 @@ var game;
 var boat;
 var players;
 var pyramid;
-var brickCount = null;
 
 $(document).ready( startApp );
 
 function startApp(){
     game = new Imhotep('body');
     players = new PlayerData();
-    // pyramid = new Pyramid(1, ['black', 'white', 'black', 'black']);
     var playerMoveCount = players.getPlayerMoveCount();
-    var player1MoveCount = players.getPlayer1MoveCount();
-    var player2MoveCount = players.getPlayer2MoveCount();
-    var player1BrickCount= players.getPlayer1BrickCount();
-    var player2BrickCount= players.getPlayer2BrickCount();
     boat = new Boat(playerMoveCount);
     $("#loadMap").click(function(){
         game.startGame();
@@ -29,8 +23,6 @@ function startApp(){
         pyramid.render();
         pyramid.pyramidClickHandler();
         pyramid.doScore();
-        var blackScore = pyramid.getBlackScore();
-        var whiteScore = pyramid.getWhiteScore();
         $("#loadMap").addClass("hidden");
         $("#directions").addClass("hidden");
 

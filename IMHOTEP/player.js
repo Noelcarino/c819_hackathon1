@@ -4,7 +4,6 @@ class PlayerData {
       this.playerMoveCount = 1;
       this.numberOfRounds = null;
       this.addBrickToShed = this.addBrickToShed.bind(this);
-      // this.addBrickToShed = this.switchShedClick.bind(this);
       this.player1CurrentBricks = null;
       this.player2CurrentBricks = null;
       this.player1MoveCount = null;
@@ -65,12 +64,15 @@ class PlayerData {
         'background-color': 'black'
       });
 
-      $("#shed1").append(newDiv1);
-      $("#shed1").append(newDiv2);
+      var shed1Id = $("#shed1");
+      var shed2Id = $("#shed2");
 
-      $("#shed2").append(newDiv3);
-      $("#shed2").append(newDiv4);
-      $("#shed2").append(newDiv5);
+      shed1Id.append(newDiv1);
+      shed1Id.append(newDiv2);
+
+      shed2Id.append(newDiv3);
+      shed2Id.append(newDiv4);
+      shed2Id.append(newDiv5);
 
 
     }
@@ -96,11 +98,7 @@ class PlayerData {
         currentBricks = this.player2CurrentBricks;
         blockColor = 'black';
       }
-      //may use this to make it so the player can add blocks after
-      //they have added some to the boat and have less then 3 again
-      // var shedChildrenElements = $('#shed'+this.playerMoveCount).children();
-      // console.log(shedChildrenElements);
-      // // if()
+
       if(currentBricks < 3 ){
         var newDiv1 = $("<div>").addClass('pyramid-blocks').css({
           'background-color' : blockColor

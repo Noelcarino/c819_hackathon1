@@ -38,8 +38,9 @@ class Boat {
     }
   }
   boatClickHandler(){
-      $("#boat").click(this.addBrickToBoat);
-    $("#boat").click(this.removeBlockFromPlayerShed);
+    var boatId = $("#boat");
+    boatId.click(this.addBrickToBoat);
+    boatId.click(this.removeBlockFromPlayerShed);
   }
 
   getBoatBrickArray() {
