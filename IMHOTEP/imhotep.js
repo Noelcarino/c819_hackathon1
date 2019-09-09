@@ -3,18 +3,11 @@ class Imhotep {
         this.dom = {
             container: $(displayDom)
         }
-
-
-
     }
     startGame(){
-        //render board;
         this.dom.container.append( boardElements );
         var boardElements = this.render();
-
     }
-
-    // render the game boards her
     render(){
         this.dom.container = $("<div>", {
             class: 'gameArea',
@@ -34,7 +27,7 @@ class Imhotep {
         var blackScore = $("<div>").attr("id", "blackScore").addClass("scoreBox").appendTo(scoreBoardDiv).text("black");
         var whiteScoreTarget = $("<div>").attr("id","whiteScoreTarget").addClass("scoreTargetBox").appendTo(whiteScore)
         var blackScoreTarget = $("<div>").attr("id","blackScoreTarget").addClass("scoreTargetBox").appendTo(blackScore)
-        
+
         var roundCountDiv = $("<div>").attr("id", "roundCountDiv").addClass("scoreBox").appendTo(statsDiv).text("Round");
 
     }

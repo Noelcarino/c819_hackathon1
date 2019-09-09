@@ -1,8 +1,6 @@
 class PlayerData {
     constructor () {
-      this.players = [
-
-      ],
+      this.players = [];
       this.playerMoveCount = 1;
       this.numberOfRounds = null;
       this.addBrickToShed = this.addBrickToShed.bind(this);
@@ -16,18 +14,8 @@ class PlayerData {
     }
     newPlayer(numberOfPlayers) {
       if(numberOfPlayers === 2){
-        return this.players = [
-          {
-          playerNumber: 1,
-          currentColorOfBricks: null
-        },
-        {
-          playerNumber: 2,
-          currentColorOfBricks: null,
-        },
-      ];
+        return this.players = [ 'player1', 'player2'];
       }
-
     }
      makeSheds() {
     if (this.players.length === 2) {
@@ -45,14 +33,19 @@ class PlayerData {
       if (this.playerMoveCount === 1){
         this.player1MoveCount++;
         this.player1CurrentBricks--;
+        this.playerMoveCount = 2;
+        this.addShedClick();
+
       } else {
         this.player2MoveCount++;
         this.player2CurrentBricks--;
+        this.player1MoveCount = 1;
+        this.addShedClick();
       }
     }
     initializeBricks(){
       this.player1CurrentBricks = 2;
-      this.player2CurrentBricks = 2;
+      this.player2CurrentBricks = 3;
       var newDiv1 = $("<div>").addClass('pyramid-blocks').css({
         'background-color' : 'white'
       });
@@ -71,20 +64,27 @@ class PlayerData {
         'background-color': 'black'
       });
 
-      $("#shed1").append(newDiv1);
-      $("#shed1").append(newDiv2);
+      var shed1Id = $("#shed1");
+      var shed2Id = $("#shed2");
 
-      $("#shed2").append(newDiv3);
-      $("#shed2").append(newDiv4);
-      $("#shed2").append(newDiv5);
+      shed1Id.append(newDiv1);
+      shed1Id.append(newDiv2);
+
+      shed2Id.append(newDiv3);
+      shed2Id.append(newDiv4);
+      shed2Id.append(newDiv5);
 
 
     }
     removeBrickFromShed(){
       if (this.playerMoveCount === 1) {
         this.player1CurrentBricks--;
+        this.playerMoveCount = 2;
+        this.addShedClick();
       } else {
         this.player2CurrentBricks--;
+        this.playerMoveCount = 1;
+        this.addShedClick();
       }
     }
     addBrickToShed(){
@@ -98,7 +98,8 @@ class PlayerData {
         currentBricks = this.player2CurrentBricks;
         blockColor = 'black';
       }
-      if(currentBricks < 3){
+
+      if(currentBricks < 3 ){
         var newDiv1 = $("<div>").addClass('pyramid-blocks').css({
           'background-color' : blockColor
         });
@@ -117,23 +118,24 @@ class PlayerData {
           this.player1CurrentBricks += 3;
           this.player1MoveCount++;
           this.playerMoveCount = 2;
+          this.addShedClick();
 
         }
         else {
           this.player2CurrentBricks += 3;
           this.player2MoveCount++;
           this.playerMoveCount = 1;
+          this.addShedClick();
         }
-      console.log("move count: ", this.playerMoveCount);
     }
     else{
-      alert('You can not have more than 5 blocks');
+      alert('You cannot have more than 5 blocks');
     }
-    }
+  }
 
-    addShedClick(){
-     $("#shed"+this.playerMoveCount).click(this.addBrickToShed);
-    }
+  addShedClick() {
+      $("#shed" +this.playerMoveCount).on("click", this.addBrickToShed);
+  }
     getPlayer1BrickCount(){
       return this.player1CurrentBricks;
     }
@@ -151,123 +153,3 @@ class PlayerData {
     }
 
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//leave here for if we decide to do 4 players
-// if(numberOfPlayers === 3){
-      //   return this.playerArray = [
-      //     {
-      //       playerNumber: 1;
-      //       currentColorOfBricks: null;
-      //       numberOfBricks: null;
-      //       numberOfPoints: null,
-      //     },
-      //     {
-      //       playerNumber: 2;
-      //       currentColorOfBricks: null;
-      //       numberOfBricks: null;
-      //       numberOfPoints: null,
-      //     },
-      //     {
-      //       playerNumber: 3;
-      //       currentColorOfBricks: null;
-      //       numberOfBricks: null;
-      //       numberOfPoints: null,
-      //     },
-      //   ];
-      // }
-      // if(numberOfPlayers === 4){
-      //   return this.players = [
-      //     {
-      //       playerNumber: 1;
-      //       currentColorOfBricks: null;
-      //       numberOfBricks: null;
-      //       numberOfPoints: null,
-      //     },
-      //     {
-      //       playerNumber: 2;
-      //       currentColorOfBricks: null;
-      //       numberOfBricks: null;
-      //       numberOfPoints: null,
-      //     },
-      //     {
-      //       playerNumber: 3;
-      //       currentColorOfBricks: null;
-      //       numberOfBricks: null;
-      //       numberOfPoints: null,
-      //     },
-      //     {
-      //       playerNumber: 4;
-      //       currentColorOfBricks: null;
-      //       numberOfBricks: null;
-      //       numberOfPoints: null,
-      //     },
-        // ];
-      // }

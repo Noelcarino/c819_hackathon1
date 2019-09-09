@@ -11,7 +11,7 @@ class Pyramid {
     this.allBlocksForRoundArray = [];
     this.pointsArray = [3, 1, 2, 3, 4, 2, 3, 1, 2, 3, 2, 3, 1, 4];
     this.domElements = {
-      pyramidContainer: null
+    pyramidContainer: null
     }
   }
   doScore (){
@@ -22,9 +22,9 @@ class Pyramid {
       else {
         this.whiteScore += this.pointsArray[integerI];
       }
-
     }
   }
+
   getBlackScore () {
     return this.blackScore;
   }
@@ -49,22 +49,18 @@ class Pyramid {
       });
       this.domElements.pyramidContainer.append(pyramidBlocks);
     }
-    // this.blockArray = [];
   }
 
   pyramidClickHandler(){
-    console.log(this.blackScore);
-    console.log(this.whiteScore);
-    $(".pyramid").click(this.addPyramidBlocks);
-    $(".pyramid").click(this.doScore);
-    $(".pyramid").click(this.displayScore);
-    $(".pyramid").click(this.emptyBoat);
 
-
-    $(".pyramid").click(function(){
-      $(".pyramid").addClass('pyramid-clicked');
+    var pyramidClassDom = $(".pyramid");
+    pyramidClassDom.click(this.addPyramidBlocks);
+    pyramidClassDom.click(this.doScore);
+    pyramidClassDom.click(this.displayScore);
+    pyramidClassDom.click(this.emptyBoat);
+    pyramidClassDom.click(function(){
+      pyramidClassDom.addClass('pyramid-clicked');
   })
-    // this.blockArray = [];
   }
   emptyBoat() {
     $(".boat").empty();
@@ -79,9 +75,5 @@ class Pyramid {
     });
     var boardContainer = $(".pyramid-container");
     boardContainer.append(this.domElements.pyramidContainer);
-    // this.domElements.pyramidBlocks = $("<div>", {
-    //   class: 'pyramid-blocks',
-    // })
-    // this.domElements.pyramidContainer.append(this.domElements.pyramidBlocks);
   }
 }
